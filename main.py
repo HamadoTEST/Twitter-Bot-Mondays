@@ -1,7 +1,4 @@
 import tweepy
-import requests
-import os
-import schedule
 import time
 
 # Your Twitter API credentials
@@ -26,13 +23,6 @@ def upload_video(file_path):
     response = client.create_tweet(media_ids=[media.media_id], text='Monday Monkey Lives For The Weekend, Sir')
     print("Tweeted:", response.data)
 
-def job():
-    video_path = 'mondays.mp4'  # Assuming the video file is named 'mondays.mp4'
-    upload_video(video_path)
-
-# Schedule the job to run every Monday at 10 PM
-schedule.every().monday.at("22:00").do(job)
-
-while True:
-    schedule.run_pending()
-    time.sleep(60)  # Wait a minute before checking the schedule again
+# Run the upload_video function
+video_path = 'mondays.mp4'  # Assuming the video file is named 'mondays.mp4'
+upload_video(video_path)
