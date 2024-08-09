@@ -8,7 +8,7 @@
 
 Change "0 5 * * *" to your own time
 
-type this into the terminal ⬇️
+type this into the terminal ➡️
 echo "0 5 * * * /path/to/your/script.sh" | crontab -
 
 type this in the terminal also
